@@ -1,0 +1,5 @@
+<a routerLink="/list-customers" class="btn btn-primary">
+  <i class="fa-solid fa-arrow-left me-2"></i>Regresar
+</a>
+<h3 class="my-3">Actualizar Cliente</h3>
+<app-form-customer (sendData)="update($event)" [customer]="data"></app-form-customer>

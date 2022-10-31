@@ -1,0 +1,50 @@
+<a routerLink="/list-customers" class="btn btn-primary">
+  <i class="fa-solid fa-arrow-left me-2"></i>Regresar
+</a>
+<h3 class="my-3">Detalle del Cliente {{ customer?.company_name }}</h3>
+<h5 class="border-bottom pb-2 border-2">Datos de contacto</h5>
+<div class="box-contact my-2">
+  <div class="row">
+    <div class="col-4">
+      <label><i class="fa-solid fa-address-book me-2"></i>Nombre de contacto</label>
+      <p>{{ customer?.contact_name || "No registrado." }}</p>
+    </div>
+    <div class="col-4">
+      <label><i class="fa-solid fa-id-card me-2"></i>Título de contacto</label>
+      <p>{{ customer?.contact_title || "No registrado." }}</p>
+    </div>
+    <div class="col-4">
+      <label><i class="fa-solid fa-phone me-2"></i>Teléfono</label>
+      <p>{{ customer?.phone || "No registrado." }}</p>
+    </div>
+    <div class="col-4">
+      <label><i class="fa-solid fa-fax me-2"></i>Fax</label>
+      <p>{{ customer?.fax || "No registrado." }}</p>
+    </div>
+  </div>
+</div>
+<h5 class="border-bottom pb-2 border-2">Datos de locación</h5>
+<div class="box-address my-2">
+  <div class="row">
+    <div class="col-4">
+      <label><i class="fa-solid fa-location-dot me-2"></i>Dirección</label>
+      <p>{{ customer?.address || "No registrado." }}</p>
+    </div>
+    <div class="col-4">
+      <label><i class="fa-solid fa-city me-2"></i>Ciudad</label>
+      <p>{{ customer?.city || "No registrado." }}</p>
+    </div>
+    <div class="col-4">
+      <label><i class="fa-solid fa-tree-city me-2"></i>Región</label>
+      <p>{{ customer?.region || "No registrado." }}</p>
+    </div>
+    <div class="col-4">
+      <label><i class="fa-solid fa-earth-americas me-2"></i>País</label>
+      <p>{{ customer?.country || "No registrado." }}</p>
+    </div>
+    <div class="col-4">
+      <label><i class="fa-solid fa-code-branch me-2"></i>Código Postal</label>
+      <p>{{ customer?.postal_code || "No registrado." }}</p>
+    </div>
+  </div>
+</div>

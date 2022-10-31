@@ -1,0 +1,51 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#addCustomer" aria-expanded="true" aria-controls="addCustomer">
+        Agregar un nuevo cliente
+      </button>
+    </h2>
+    <div id="addCustomer" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <app-form-customer (sendData)="save($event)"></app-form-customer>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#filters" aria-expanded="true" aria-controls="filters">
+        Filtrar clientes
+      </button>
+    </h2>
+    <div id="filters" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body filters_box">
+        <div>
+          <label for="filter_field" class="form-label">Campo de filtrado</label>
+          <select id="filter_field" (change)="onChangeFilter($event)" class="form-select">
+            <option value="" selected>Ninguno</option>
+            <option value="company_name">Nombre de la Empresa</option>
+            <option value="contact_name">Nombre de contacto</option>
+            <option value="country">País</option>
+            <option value="city">Ciudad</option>
+          </select>
+        </div>
+        <div>
+          <label for="filter_value" class="form-label">Valor de búsqueda</label>
+          <input
+            type="text"
+            class="form-control"
+            id="filter_value"
+            [placeholder]="placeholder_filter"
+            (input)="onInputFilter($event)"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="customers_filtered.length == 0; else data">
+  <div class="alert alert-danger mt-4 text-center">No hay registros con el valor de búsqueda introducido.</div>
+</ng-container>
+<ng-template #data>
+  <app-table-customers [customers]="customers_filtered" (deleteCustomer)="delete($event)"></app-table-customers>
+</ng-template>

@@ -1,0 +1,111 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="company_name" class="form-label">Nombre de la Empresa*</label>
+    <input
+      type="text"
+      id="company_name"
+      class="form-control"
+      placeholder="Nombre de la Empresa"
+      formControlName="company_name"
+    >
+  </div>
+  <div>
+    <label for="contact_name" class="form-label">Nombre de contacto*</label>
+    <input
+      type="text"
+      id="contact_name"
+      class="form-control"
+      placeholder="Nombre de contacto"
+      formControlName="contact_name"
+    >
+  </div>
+  <div>
+    <label for="contact_title" class="form-label">Titulo de contacto</label>
+    <input
+      type="text"
+      id="contact_title"
+      class="form-control"
+      placeholder="Titulo de contacto"
+      formControlName="contact_title"
+    >
+  </div>
+  <div>
+    <label for="address" class="form-label">Dirección*</label>
+    <input
+      type="text"
+      id="address"
+      class="form-control"
+      placeholder="Dirección"
+      formControlName="address"
+    >
+  </div>
+  <div>
+    <label for="country" class="form-label">País*</label>
+    <input
+      type="text"
+      id="country"
+      class="form-control"
+      placeholder="País"
+      formControlName="country"
+    >
+  </div>
+  <div>
+    <label for="city" class="form-label">Ciudad*</label>
+    <input
+      type="text"
+      id="city"
+      class="form-control"
+      placeholder="Ciudad"
+      formControlName="city"
+    >
+  </div>
+  <div>
+    <label for="region" class="form-label">Región*</label>
+    <input
+      type="text"
+      id="region"
+      class="form-control"
+      placeholder="Región"
+      formControlName="region"
+    >
+  </div>
+  <div>
+    <label for="postal_code" class="form-label">Código Postal*</label>
+    <input
+      type="text"
+      id="postal_code"
+      class="form-control"
+      placeholder="Código Postal"
+      formControlName="postal_code"
+    >
+  </div>
+  <div>
+    <label for="phone" class="form-label">Teléfono*</label>
+    <input
+      type="text"
+      id="phone"
+      class="form-control"
+      placeholder="Teléfono"
+      formControlName="phone"
+    >
+  </div>
+  <div>
+    <label for="fax" class="form-label">Fax</label>
+    <input
+      type="text"
+      id="fax"
+      class="form-control"
+      placeholder="Fax"
+      formControlName="fax"
+    >
+  </div>
+  <p></p><p></p><p></p>
+  <button
+    class="btn btn-primary"
+    type="submit"
+    [disabled]="form.invalid"
+  >
+    {{ customer ? "Actualizar cliente":"Agregar cliente" }}
+  </button>
+  <p></p>
+</form>
